@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>SSM快速整合 | Hexo</title>
+  <meta name="description" content="SSM总体结构 创建一个maven工程，工程目录结构及数据库设计 create table user (     id   int auto_increment     primary key,        name varchar(20) null,     age  int         null ); 一.在pom.xml中添加依赖 &lt;!-- SpringMVC --&gt; &amp;l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM快速整合">
+<meta property="og:url" content="http://yoursite.com/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="SSM总体结构 创建一个maven工程，工程目录结构及数据库设计 create table user (     id   int auto_increment     primary key,        name varchar(20) null,     age  int         null ); 一.在pom.xml中添加依赖 &lt;!-- SpringMVC --&gt; &amp;l">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB3175843897edbb7baa8df6e329ae21d4?method=download&shareKey=35500bd85c397c7b87ad0101e099dd00">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB1b49f315deae290adfee4224529b231a?method=download&shareKey=140ea85d36a80ee09550b0f9acd08261">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB94833b4c914d28a3939b401c5e68126b?method=download&shareKey=8dcefe920835bf4116adb1bc58938269">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB918a5c815cc748916d8718d1f06a8454?method=download&shareKey=cb242dce02c44dfacb2c169b639361d9">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEBcc9314d13666ee5bea48c2f3d7c94216?method=download&shareKey=e7389a6d615ffd135cb64e897e49886f">
+<meta property="article:published_time" content="2020-09-24T11:13:52.800Z">
+<meta property="article:modified_time" content="2020-06-25T04:51:06.299Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/WEB3175843897edbb7baa8df6e329ae21d4?method=download&shareKey=35500bd85c397c7b87ad0101e099dd00">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/carterren" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">carterren</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> TianJin, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/carterren" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/09/24/%E7%BE%8E%E5%9B%A2%E4%B8%80%E9%9D%A2/" class="title">美团一面</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-09-24T11:13:52.802Z" itemprop="datePublished">2020-09-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/09/24/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%8F%90%E5%89%8D%E6%89%B9%E9%9D%A2%E8%AF%95%E5%88%86%E4%BA%AB/" class="title">字节跳动提前批面试分享</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-09-24T11:13:52.801Z" itemprop="datePublished">2020-09-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/09/24/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="title">排序算法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-09-24T11:13:52.801Z" itemprop="datePublished">2020-09-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/" class="title">SSM快速整合</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-09-24T11:13:52.800Z" itemprop="datePublished">2020-09-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/09/24/IOC&AOP/" class="title">IOC&amp;AOP</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-09-24T11:13:52.799Z" itemprop="datePublished">2020-09-24</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-SSM快速整合" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSM快速整合
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/" class="article-date">
+	  <time datetime="2020-09-24T11:13:52.800Z" itemprop="datePublished">2020-09-24</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="SSM总体结构"><a href="#SSM总体结构" class="headerlink" title="SSM总体结构"></a>SSM总体结构</h1><p><img src="https://note.youdao.com/yws/api/personal/file/WEB3175843897edbb7baa8df6e329ae21d4?method=download&shareKey=35500bd85c397c7b87ad0101e099dd00" alt="avatar"></p>
+<h1 id="创建一个maven工程，工程目录结构及数据库设计"><a href="#创建一个maven工程，工程目录结构及数据库设计" class="headerlink" title="创建一个maven工程，工程目录结构及数据库设计"></a>创建一个maven工程，工程目录结构及数据库设计</h1><p><img src="https://note.youdao.com/yws/api/personal/file/WEB1b49f315deae290adfee4224529b231a?method=download&shareKey=140ea85d36a80ee09550b0f9acd08261" alt="avatar"></p>
+<pre><code>create table user
+(
+    id   int auto_increment
+    primary key,
+       name varchar(20) null,
+    age  int         null
+);</code></pre><p><img src="https://note.youdao.com/yws/api/personal/file/WEB94833b4c914d28a3939b401c5e68126b?method=download&shareKey=8dcefe920835bf4116adb1bc58938269" alt="avatar"></p>
+<h1 id="一-在pom-xml中添加依赖"><a href="#一-在pom-xml中添加依赖" class="headerlink" title="一.在pom.xml中添加依赖"></a>一.在pom.xml中添加依赖</h1><pre><code> &lt;!-- SpringMVC --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+  &lt;version&gt; 5.2.7.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- Spring JDBC --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+  &lt;version&gt; 5.2.7.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- Spring AOP --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;
+  &lt;version&gt; 5.2.7.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-aspects&lt;/artifactId&gt;
+  &lt;version&gt; 5.2.7.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- MyBatis --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+  &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+  &lt;version&gt;3.4.5&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- MyBatis整合Spring --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+  &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+  &lt;version&gt;1.3.1&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- MySQL驱动 --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;mysql&lt;/groupId&gt;
+  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+  &lt;version&gt;8.0.20&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- C3P0 --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;c3p0&lt;/groupId&gt;
+  &lt;artifactId&gt;c3p0&lt;/artifactId&gt;
+  &lt;version&gt;0.9.1.2&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- JSTL --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;jstl&lt;/groupId&gt;
+  &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+  &lt;version&gt;1.2&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- ServletAPI --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+  &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+  &lt;version&gt;3.1.0&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+  &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+  &lt;version&gt;1.18.12&lt;/version&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre><h1 id="二-Spring整合Mybaits-在Spring-xml中配置"><a href="#二-Spring整合Mybaits-在Spring-xml中配置" class="headerlink" title="二.Spring整合Mybaits,在Spring.xml中配置"></a>二.Spring整合Mybaits,在Spring.xml中配置</h1><pre><code> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+ &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+   xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+   xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+   xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd&quot;&gt;
+
+&lt;!-- 整合MyBatis --&gt;
+&lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+    &lt;property name=&quot;user&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;password&quot; value=&quot;123456&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql://localhost:3306/ssm?useSSL=false&amp;amp;serverTimezone=UTC&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;initialPoolSize&quot; value=&quot;5&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;maxPoolSize&quot; value=&quot;10&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;!-- 配置MyBatis SqlSessionFactory --&gt;
+&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:com/ssm/repository/*.xml&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;configLocation&quot; value=&quot;classpath:config.xml&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;!-- 扫描自定义的Mapper接口 --&gt;
+&lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;property name=&quot;basePackage&quot; value=&quot;com.ssm.repository&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+&lt;/beans&gt;</code></pre><h1 id="三-在SpringMVC-xml中配置MVC相关"><a href="#三-在SpringMVC-xml中配置MVC相关" class="headerlink" title="三.在SpringMVC.xml中配置MVC相关"></a>三.在SpringMVC.xml中配置MVC相关</h1><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+   xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+   xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+   xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd&quot;&gt;
+
+&lt;!-- 启动注解驱动 --&gt;
+&lt;mvc:annotation-driven&gt;&lt;/mvc:annotation-driven&gt;
+
+&lt;!-- 扫描业务代码 --&gt;
+&lt;context:component-scan base-package=&quot;com.ssm&quot;&gt;&lt;/context:component-scan&gt;
+
+&lt;!-- 配置视图解析器 --&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+    &lt;property name=&quot;prefix&quot; value=&quot;/&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;/beans&gt;</code></pre><h1 id="四-config-xml中配置数据库相关内容"><a href="#四-config-xml中配置数据库相关内容" class="headerlink" title="四.config.xml中配置数据库相关内容"></a>四.config.xml中配置数据库相关内容</h1><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+&lt;settings&gt;
+    &lt;!-- 打印SQL--&gt;
+    &lt;setting name=&quot;logImpl&quot; value=&quot;STDOUT_LOGGING&quot; /&gt;
+    &lt;/settings&gt;
+    &lt;typeAliases&gt;
+    &lt;!-- 指定一个包名，MyBatis会在包名下搜索需要的JavaBean--&gt;
+    &lt;package name=&quot;com.ssm.entity&quot;/&gt;
+&lt;/typeAliases&gt;
+&lt;/configuration&gt;</code></pre><h1 id="五-接下来开始创建项目中每个部分"><a href="#五-接下来开始创建项目中每个部分" class="headerlink" title="五.接下来开始创建项目中每个部分"></a>五.接下来开始创建项目中每个部分</h1><h2 id="1-创建实体类"><a href="#1-创建实体类" class="headerlink" title="1.创建实体类"></a>1.创建实体类</h2><pre><code>@Data &lt;!-- 使用lombok注解，简化实体类开发--&gt;
+public class User {
+    private Integer id;
+    private String name;
+    private Integer age;
+}</code></pre><h2 id="2-创建UserRepository接口和UserRepository-xml"><a href="#2-创建UserRepository接口和UserRepository-xml" class="headerlink" title="2.创建UserRepository接口和UserRepository.xml"></a>2.创建UserRepository接口和UserRepository.xml</h2><h3 id="UserRepository接口"><a href="#UserRepository接口" class="headerlink" title="UserRepository接口"></a>UserRepository接口</h3><pre><code>@Repository
+public interface UserRepository {
+    public List&lt;User&gt; findAll();
+}</code></pre><h3 id="UserRepository-xml"><a href="#UserRepository-xml" class="headerlink" title="UserRepository.xml"></a>UserRepository.xml</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.ssm.repository.UserRepository&quot;&gt;
+    &lt;select id=&quot;findAll&quot; resultType=&quot;User&quot;&gt;
+            select * from user
+    &lt;/select&gt;
+&lt;/mapper&gt;</code></pre><h2 id="2-创建UserService接口和实现类"><a href="#2-创建UserService接口和实现类" class="headerlink" title="2.创建UserService接口和实现类"></a>2.创建UserService接口和实现类</h2><h3 id="UserService"><a href="#UserService" class="headerlink" title="UserService"></a>UserService</h3><pre><code>public interface UserService {
+    public List&lt;User&gt; findAll();
+}</code></pre><h3 id="UserServiceImpl"><a href="#UserServiceImpl" class="headerlink" title="UserServiceImpl"></a>UserServiceImpl</h3><pre><code>@Service
+public class UserServiceImpl implements UserService {
+    @Autowired
+    private UserRepository userRepository;
+
+    @Override
+    public List&lt;User&gt; findAll() {
+        return userRepository.findAll();
+    }
+}</code></pre><h2 id="3-创建UserHandler"><a href="#3-创建UserHandler" class="headerlink" title="3.创建UserHandler"></a>3.创建UserHandler</h2><pre><code>@Controller
+@RequestMapping(&quot;/user&quot;)
+public class UserHandler {
+        @Autowired
+    private UserService userService;
+
+    @GetMapping(&quot;/findAll&quot;)
+    public ModelAndView findAll(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName(&quot;index&quot;);
+        modelAndView.addObject(&quot;list&quot;,userService.findAll());
+        return modelAndView;
+    }
+}</code></pre><h2 id="4-在index-jsp中简单输出"><a href="#4-在index-jsp中简单输出" class="headerlink" title="4.在index.jsp中简单输出"></a>4.在index.jsp中简单输出</h2><pre><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
+&lt;%@page isELIgnored=&quot;false&quot; %&gt;
+&lt;%@taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;c:forEach items=&quot;${list}&quot; var=&quot;user&quot;&gt;    &lt;!-- EL表达式便利 --&gt;
+    ${user.id}--${user.name}--${user.age}
+    &lt;/c:forEach&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><h2 id="5-最后运行结果"><a href="#5-最后运行结果" class="headerlink" title="5.最后运行结果"></a>5.最后运行结果</h2><h3 id="在地址栏中输入http-localhost-8080-user-findAll"><a href="#在地址栏中输入http-localhost-8080-user-findAll" class="headerlink" title="在地址栏中输入http://localhost:8080/user/findAll"></a>在地址栏中输入<a href="http://localhost:8080/user/findAll" target="_blank" rel="noopener">http://localhost:8080/user/findAll</a></h3><p><img src="https://note.youdao.com/yws/api/personal/file/WEB918a5c815cc748916d8718d1f06a8454?method=download&shareKey=cb242dce02c44dfacb2c169b639361d9" alt="avatar"></p>
+<h1 id="最后需要注意在pom-xml中的build标签下添加"><a href="#最后需要注意在pom-xml中的build标签下添加" class="headerlink" title="最后需要注意在pom.xml中的build标签下添加"></a>最后需要注意在pom.xml中的build标签下添加</h1><p><img src="https://note.youdao.com/yws/api/personal/file/WEBcc9314d13666ee5bea48c2f3d7c94216?method=download&shareKey=e7389a6d615ffd135cb64e897e49886f" alt="avatar"></p>
+<pre><code>&lt;!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 --&gt;
+ &lt;resources&gt;
+   &lt;resource&gt;
+     &lt;directory&gt;src/main/java&lt;/directory&gt;
+     &lt;includes&gt;
+       &lt;include&gt;**/*.properties&lt;/include&gt;
+       &lt;include&gt;**/*.xml&lt;/include&gt;
+     &lt;/includes&gt;
+     &lt;filtering&gt;false&lt;/filtering&gt;
+   &lt;/resource&gt;
+ &lt;/resources&gt;</code></pre><h1 id="到此就整合完毕，可以自己尝试添加一下其他的功能。"><a href="#到此就整合完毕，可以自己尝试添加一下其他的功能。" class="headerlink" title="到此就整合完毕，可以自己尝试添加一下其他的功能。"></a>到此就整合完毕，可以自己尝试添加一下其他的功能。</h1>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/" title="SSM快速整合" target="_blank" rel="external">http://yoursite.com/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/carterren" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/carterren" target="_blank"><span class="text-dark">carterren</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/09/24/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="排序算法"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/09/24/IOC&AOP/" title="IOC&amp;AOP"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/carterren" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

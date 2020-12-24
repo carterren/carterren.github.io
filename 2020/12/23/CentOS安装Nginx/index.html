@@ -17,26 +17,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>SSM快速整合 | Hexo</title>
-  <meta name="description" content="SSM总体结构 创建一个maven工程，工程目录结构及数据库设计 create table user (     id   int auto_increment     primary key,        name varchar(20) null,     age  int         null ); 一.在pom.xml中添加依赖 &lt;!-- SpringMVC --&gt; &amp;l">
+  <title>CentOS安装Nginx | Hexo</title>
+  <meta name="description" content="CentOS安装Nginx安装依赖包 12&#x2F;&#x2F;一键安装上面四个依赖yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel  1.上传到&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;文件夹下 rz 命令2.解压缩 tar -zxvf nginx-1.18.0.tar.gz 3.进入到nginx-1.18.0的目录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSM快速整合">
-<meta property="og:url" content="http://yoursite.com/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/index.html">
+<meta property="og:title" content="CentOS安装Nginx">
+<meta property="og:url" content="http://yoursite.com/2020/12/23/CentOS%E5%AE%89%E8%A3%85Nginx/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="SSM总体结构 创建一个maven工程，工程目录结构及数据库设计 create table user (     id   int auto_increment     primary key,        name varchar(20) null,     age  int         null ); 一.在pom.xml中添加依赖 &lt;!-- SpringMVC --&gt; &amp;l">
+<meta property="og:description" content="CentOS安装Nginx安装依赖包 12&#x2F;&#x2F;一键安装上面四个依赖yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel  1.上传到&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;文件夹下 rz 命令2.解压缩 tar -zxvf nginx-1.18.0.tar.gz 3.进入到nginx-1.18.0的目录">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB3175843897edbb7baa8df6e329ae21d4?method=download&shareKey=35500bd85c397c7b87ad0101e099dd00">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB1b49f315deae290adfee4224529b231a?method=download&shareKey=140ea85d36a80ee09550b0f9acd08261">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB94833b4c914d28a3939b401c5e68126b?method=download&shareKey=8dcefe920835bf4116adb1bc58938269">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB918a5c815cc748916d8718d1f06a8454?method=download&shareKey=cb242dce02c44dfacb2c169b639361d9">
-<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEBcc9314d13666ee5bea48c2f3d7c94216?method=download&shareKey=e7389a6d615ffd135cb64e897e49886f">
-<meta property="article:published_time" content="2020-09-24T11:13:52.800Z">
-<meta property="article:modified_time" content="2020-06-25T04:51:06.299Z">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608708577798.png">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608708620055.png">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709222715.png">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709232679.png">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709378056.png">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709404196.png">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709298073.png">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709348400.png">
+<meta property="article:published_time" content="2020-12-23T09:26:56.682Z">
+<meta property="article:modified_time" content="2020-12-23T07:45:00.531Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/WEB3175843897edbb7baa8df6e329ae21d4?method=download&shareKey=35500bd85c397c7b87ad0101e099dd00">
+<meta name="twitter:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608708577798.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/12/23/CentOS%E5%AE%89%E8%A3%85Nginx/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -332,14 +335,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-SSM快速整合" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-CentOS安装Nginx" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      SSM快速整合
+      CentOS安装Nginx
     </h1>
   
 
@@ -347,8 +350,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/" class="article-date">
-	  <time datetime="2020-09-24T11:13:52.800Z" itemprop="datePublished">2020-09-24</time>
+	<a href="/2020/12/23/CentOS%E5%AE%89%E8%A3%85Nginx/" class="article-date">
+	  <time datetime="2020-12-23T09:26:56.682Z" itemprop="datePublished">2020-12-23</time>
 	</a>
 </span>
         
@@ -356,218 +359,34 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/12/23/CentOS%E5%AE%89%E8%A3%85Nginx/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="SSM总体结构"><a href="#SSM总体结构" class="headerlink" title="SSM总体结构"></a>SSM总体结构</h1><p><img src="https://note.youdao.com/yws/api/personal/file/WEB3175843897edbb7baa8df6e329ae21d4?method=download&shareKey=35500bd85c397c7b87ad0101e099dd00" alt="avatar"></p>
-<h1 id="创建一个maven工程，工程目录结构及数据库设计"><a href="#创建一个maven工程，工程目录结构及数据库设计" class="headerlink" title="创建一个maven工程，工程目录结构及数据库设计"></a>创建一个maven工程，工程目录结构及数据库设计</h1><p><img src="https://note.youdao.com/yws/api/personal/file/WEB1b49f315deae290adfee4224529b231a?method=download&shareKey=140ea85d36a80ee09550b0f9acd08261" alt="avatar"></p>
-<pre><code>create table user
-(
-    id   int auto_increment
-    primary key,
-       name varchar(20) null,
-    age  int         null
-);</code></pre><p><img src="https://note.youdao.com/yws/api/personal/file/WEB94833b4c914d28a3939b401c5e68126b?method=download&shareKey=8dcefe920835bf4116adb1bc58938269" alt="avatar"></p>
-<h1 id="一-在pom-xml中添加依赖"><a href="#一-在pom-xml中添加依赖" class="headerlink" title="一.在pom.xml中添加依赖"></a>一.在pom.xml中添加依赖</h1><pre><code> &lt;!-- SpringMVC --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
-  &lt;version&gt; 5.2.7.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;
+        <h1 id="CentOS安装Nginx"><a href="#CentOS安装Nginx" class="headerlink" title="CentOS安装Nginx"></a>CentOS安装Nginx</h1><p>安装依赖包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;一键安装上面四个依赖</span><br><span class="line">yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel</span><br></pre></td></tr></table></figure>
 
-&lt;!-- Spring JDBC --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
-  &lt;version&gt; 5.2.7.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;
+<h4 id="1-上传到-usr-local-nginx-文件夹下-rz-命令"><a href="#1-上传到-usr-local-nginx-文件夹下-rz-命令" class="headerlink" title="1.上传到/usr/local/nginx/文件夹下 rz 命令"></a>1.上传到/usr/local/nginx/文件夹下 rz 命令</h4><h4 id="2-解压缩-tar-zxvf-nginx-1-18-0-tar-gz"><a href="#2-解压缩-tar-zxvf-nginx-1-18-0-tar-gz" class="headerlink" title="2.解压缩 tar -zxvf nginx-1.18.0.tar.gz"></a>2.解压缩 tar -zxvf nginx-1.18.0.tar.gz</h4><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608708577798.png" alt="1608708577798"></p>
+<h4 id="3-进入到nginx-1-18-0的目录，查看下面的文件"><a href="#3-进入到nginx-1-18-0的目录，查看下面的文件" class="headerlink" title="3.进入到nginx-1.18.0的目录，查看下面的文件"></a>3.进入到nginx-1.18.0的目录，查看下面的文件</h4><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608708620055.png" alt="1608708620055"></p>
+<h4 id="4-进行编译和安装"><a href="#4-进行编译和安装" class="headerlink" title="4.进行编译和安装"></a>4.进行编译和安装</h4><p>执行 ./configure命令   </p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709222715.png" alt="1608709222715"></p>
+<p><strong>出现下面的图即为成功</strong></p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709232679.png" alt="1608709232679"></p>
+<p>执行make命令</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709378056.png" alt="1608709378056"></p>
+<p>执行make install命令</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709404196.png" alt="1608709404196"></p>
+<h4 id="5-运行（第一种是没加载配置文件所以报错，在后面加上配置文件就OK了）"><a href="#5-运行（第一种是没加载配置文件所以报错，在后面加上配置文件就OK了）" class="headerlink" title="5.运行（第一种是没加载配置文件所以报错，在后面加上配置文件就OK了）"></a>5.运行（第一种是没加载配置文件所以报错，在后面加上配置文件就OK了）</h4><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709298073.png" alt="1608709298073"></p>
+<p>通过浏览器访问ip地址</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1608709348400.png" alt="1608709348400"></p>
+<h4 id="6-若想使用外部主机连接上虚拟机访问端口192-168-234-131，需要关闭虚拟机的防火墙："><a href="#6-若想使用外部主机连接上虚拟机访问端口192-168-234-131，需要关闭虚拟机的防火墙：" class="headerlink" title="6.若想使用外部主机连接上虚拟机访问端口192.168.234.131，需要关闭虚拟机的防火墙："></a><strong>6.若想使用外部主机连接上虚拟机访问端口192.168.234.131，需要关闭虚拟机的防火墙：</strong></h4><p>centOS6及以前版本使用命令： systemctl stop iptables.service</p>
+<p>centOS7关闭防火墙命令： systemctl stop firewalld.service</p>
+<p>随后访问该ip即可看到上面的界面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">安装完成一般常用命令</span><br><span class="line"></span><br><span class="line">进入安装目录中，</span><br><span class="line"></span><br><span class="line">命令： cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin</span><br><span class="line"></span><br><span class="line">启动，关闭，重启，命令：</span><br><span class="line"></span><br><span class="line">.&#x2F;nginx 启动</span><br><span class="line"></span><br><span class="line">.&#x2F;nginx -s stop 关闭</span><br><span class="line"></span><br><span class="line">.&#x2F;nginx -s reload 重启</span><br></pre></td></tr></table></figure>
 
-&lt;!-- Spring AOP --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;
-  &lt;version&gt; 5.2.7.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-aspects&lt;/artifactId&gt;
-  &lt;version&gt; 5.2.7.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;
 
-&lt;!-- MyBatis --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-  &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
-  &lt;version&gt;3.4.5&lt;/version&gt;
-&lt;/dependency&gt;
-
-&lt;!-- MyBatis整合Spring --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-  &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
-  &lt;version&gt;1.3.1&lt;/version&gt;
-&lt;/dependency&gt;
-
-&lt;!-- MySQL驱动 --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;mysql&lt;/groupId&gt;
-  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-  &lt;version&gt;8.0.20&lt;/version&gt;
-&lt;/dependency&gt;
-
-&lt;!-- C3P0 --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;c3p0&lt;/groupId&gt;
-  &lt;artifactId&gt;c3p0&lt;/artifactId&gt;
-  &lt;version&gt;0.9.1.2&lt;/version&gt;
-&lt;/dependency&gt;
-
-&lt;!-- JSTL --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;jstl&lt;/groupId&gt;
-  &lt;artifactId&gt;jstl&lt;/artifactId&gt;
-  &lt;version&gt;1.2&lt;/version&gt;
-&lt;/dependency&gt;
-
-&lt;!-- ServletAPI --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
-  &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
-  &lt;version&gt;3.1.0&lt;/version&gt;
-&lt;/dependency&gt;
-
-&lt;dependency&gt;
-  &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
-  &lt;artifactId&gt;lombok&lt;/artifactId&gt;
-  &lt;version&gt;1.18.12&lt;/version&gt;
-  &lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre><h1 id="二-Spring整合Mybaits-在Spring-xml中配置"><a href="#二-Spring整合Mybaits-在Spring-xml中配置" class="headerlink" title="二.Spring整合Mybaits,在Spring.xml中配置"></a>二.Spring整合Mybaits,在Spring.xml中配置</h1><pre><code> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
- &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-   xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
-   xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
-   xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd&quot;&gt;
-
-&lt;!-- 整合MyBatis --&gt;
-&lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
-    &lt;property name=&quot;user&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
-    &lt;property name=&quot;password&quot; value=&quot;123456&quot;&gt;&lt;/property&gt;
-    &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql://localhost:3306/ssm?useSSL=false&amp;amp;serverTimezone=UTC&quot;&gt;&lt;/property&gt;
-    &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot;&gt;&lt;/property&gt;
-    &lt;property name=&quot;initialPoolSize&quot; value=&quot;5&quot;&gt;&lt;/property&gt;
-    &lt;property name=&quot;maxPoolSize&quot; value=&quot;10&quot;&gt;&lt;/property&gt;
-&lt;/bean&gt;
-
-&lt;!-- 配置MyBatis SqlSessionFactory --&gt;
-&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
-    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
-    &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:com/ssm/repository/*.xml&quot;&gt;&lt;/property&gt;
-    &lt;property name=&quot;configLocation&quot; value=&quot;classpath:config.xml&quot;&gt;&lt;/property&gt;
-&lt;/bean&gt;
-
-&lt;!-- 扫描自定义的Mapper接口 --&gt;
-&lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
-    &lt;property name=&quot;basePackage&quot; value=&quot;com.ssm.repository&quot;&gt;&lt;/property&gt;
-&lt;/bean&gt;
-&lt;/beans&gt;</code></pre><h1 id="三-在SpringMVC-xml中配置MVC相关"><a href="#三-在SpringMVC-xml中配置MVC相关" class="headerlink" title="三.在SpringMVC.xml中配置MVC相关"></a>三.在SpringMVC.xml中配置MVC相关</h1><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-   xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
-   xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
-   xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd&quot;&gt;
-
-&lt;!-- 启动注解驱动 --&gt;
-&lt;mvc:annotation-driven&gt;&lt;/mvc:annotation-driven&gt;
-
-&lt;!-- 扫描业务代码 --&gt;
-&lt;context:component-scan base-package=&quot;com.ssm&quot;&gt;&lt;/context:component-scan&gt;
-
-&lt;!-- 配置视图解析器 --&gt;
-&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
-    &lt;property name=&quot;prefix&quot; value=&quot;/&quot;&gt;&lt;/property&gt;
-    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;
-&lt;/bean&gt;
-
-&lt;/beans&gt;</code></pre><h1 id="四-config-xml中配置数据库相关内容"><a href="#四-config-xml中配置数据库相关内容" class="headerlink" title="四.config.xml中配置数据库相关内容"></a>四.config.xml中配置数据库相关内容</h1><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
-&lt;configuration&gt;
-&lt;settings&gt;
-    &lt;!-- 打印SQL--&gt;
-    &lt;setting name=&quot;logImpl&quot; value=&quot;STDOUT_LOGGING&quot; /&gt;
-    &lt;/settings&gt;
-    &lt;typeAliases&gt;
-    &lt;!-- 指定一个包名，MyBatis会在包名下搜索需要的JavaBean--&gt;
-    &lt;package name=&quot;com.ssm.entity&quot;/&gt;
-&lt;/typeAliases&gt;
-&lt;/configuration&gt;</code></pre><h1 id="五-接下来开始创建项目中每个部分"><a href="#五-接下来开始创建项目中每个部分" class="headerlink" title="五.接下来开始创建项目中每个部分"></a>五.接下来开始创建项目中每个部分</h1><h2 id="1-创建实体类"><a href="#1-创建实体类" class="headerlink" title="1.创建实体类"></a>1.创建实体类</h2><pre><code>@Data &lt;!-- 使用lombok注解，简化实体类开发--&gt;
-public class User {
-    private Integer id;
-    private String name;
-    private Integer age;
-}</code></pre><h2 id="2-创建UserRepository接口和UserRepository-xml"><a href="#2-创建UserRepository接口和UserRepository-xml" class="headerlink" title="2.创建UserRepository接口和UserRepository.xml"></a>2.创建UserRepository接口和UserRepository.xml</h2><h3 id="UserRepository接口"><a href="#UserRepository接口" class="headerlink" title="UserRepository接口"></a>UserRepository接口</h3><pre><code>@Repository
-public interface UserRepository {
-    public List&lt;User&gt; findAll();
-}</code></pre><h3 id="UserRepository-xml"><a href="#UserRepository-xml" class="headerlink" title="UserRepository.xml"></a>UserRepository.xml</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
-&lt;mapper namespace=&quot;com.ssm.repository.UserRepository&quot;&gt;
-    &lt;select id=&quot;findAll&quot; resultType=&quot;User&quot;&gt;
-            select * from user
-    &lt;/select&gt;
-&lt;/mapper&gt;</code></pre><h2 id="2-创建UserService接口和实现类"><a href="#2-创建UserService接口和实现类" class="headerlink" title="2.创建UserService接口和实现类"></a>2.创建UserService接口和实现类</h2><h3 id="UserService"><a href="#UserService" class="headerlink" title="UserService"></a>UserService</h3><pre><code>public interface UserService {
-    public List&lt;User&gt; findAll();
-}</code></pre><h3 id="UserServiceImpl"><a href="#UserServiceImpl" class="headerlink" title="UserServiceImpl"></a>UserServiceImpl</h3><pre><code>@Service
-public class UserServiceImpl implements UserService {
-    @Autowired
-    private UserRepository userRepository;
-
-    @Override
-    public List&lt;User&gt; findAll() {
-        return userRepository.findAll();
-    }
-}</code></pre><h2 id="3-创建UserHandler"><a href="#3-创建UserHandler" class="headerlink" title="3.创建UserHandler"></a>3.创建UserHandler</h2><pre><code>@Controller
-@RequestMapping(&quot;/user&quot;)
-public class UserHandler {
-        @Autowired
-    private UserService userService;
-
-    @GetMapping(&quot;/findAll&quot;)
-    public ModelAndView findAll(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName(&quot;index&quot;);
-        modelAndView.addObject(&quot;list&quot;,userService.findAll());
-        return modelAndView;
-    }
-}</code></pre><h2 id="4-在index-jsp中简单输出"><a href="#4-在index-jsp中简单输出" class="headerlink" title="4.在index.jsp中简单输出"></a>4.在index.jsp中简单输出</h2><pre><code>&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;
-&lt;%@page isELIgnored=&quot;false&quot; %&gt;
-&lt;%@taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;c:forEach items=&quot;${list}&quot; var=&quot;user&quot;&gt;    &lt;!-- EL表达式便利 --&gt;
-    ${user.id}--${user.name}--${user.age}
-    &lt;/c:forEach&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><h2 id="5-最后运行结果"><a href="#5-最后运行结果" class="headerlink" title="5.最后运行结果"></a>5.最后运行结果</h2><h3 id="在地址栏中输入http-localhost-8080-user-findAll"><a href="#在地址栏中输入http-localhost-8080-user-findAll" class="headerlink" title="在地址栏中输入http://localhost:8080/user/findAll"></a>在地址栏中输入<a href="http://localhost:8080/user/findAll" target="_blank" rel="noopener">http://localhost:8080/user/findAll</a></h3><p><img src="https://note.youdao.com/yws/api/personal/file/WEB918a5c815cc748916d8718d1f06a8454?method=download&shareKey=cb242dce02c44dfacb2c169b639361d9" alt="avatar"></p>
-<h1 id="最后需要注意在pom-xml中的build标签下添加"><a href="#最后需要注意在pom-xml中的build标签下添加" class="headerlink" title="最后需要注意在pom.xml中的build标签下添加"></a>最后需要注意在pom.xml中的build标签下添加</h1><p><img src="https://note.youdao.com/yws/api/personal/file/WEBcc9314d13666ee5bea48c2f3d7c94216?method=download&shareKey=e7389a6d615ffd135cb64e897e49886f" alt="avatar"></p>
-<pre><code>&lt;!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 --&gt;
- &lt;resources&gt;
-   &lt;resource&gt;
-     &lt;directory&gt;src/main/java&lt;/directory&gt;
-     &lt;includes&gt;
-       &lt;include&gt;**/*.properties&lt;/include&gt;
-       &lt;include&gt;**/*.xml&lt;/include&gt;
-     &lt;/includes&gt;
-     &lt;filtering&gt;false&lt;/filtering&gt;
-   &lt;/resource&gt;
- &lt;/resources&gt;</code></pre><h1 id="到此就整合完毕，可以自己尝试添加一下其他的功能。"><a href="#到此就整合完毕，可以自己尝试添加一下其他的功能。" class="headerlink" title="到此就整合完毕，可以自己尝试添加一下其他的功能。"></a>到此就整合完毕，可以自己尝试添加一下其他的功能。</h1>
       
     </div>
     <div class="article-footer">
@@ -576,7 +395,7 @@ public class UserHandler {
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/" title="SSM快速整合" target="_blank" rel="external">http://yoursite.com/2020/09/24/SSM%E5%BF%AB%E9%80%9F%E6%95%B4%E5%90%88/</a>
+      <a href="http://yoursite.com/2020/12/23/CentOS%E5%AE%89%E8%A3%85Nginx/" title="CentOS安装Nginx" target="_blank" rel="external">http://yoursite.com/2020/12/23/CentOS%E5%AE%89%E8%A3%85Nginx/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -623,12 +442,12 @@ public class UserHandler {
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/09/24/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="排序算法"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2020/12/23/CentOS%E5%AE%89%E8%A3%85JDK/" title="CentOS安装JDK"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/09/24/IOC&AOP/" title="IOC&amp;AOP"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/09/24/%E7%BE%8E%E5%9B%A2%E4%B8%80%E9%9D%A2/" title="美团一面"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
